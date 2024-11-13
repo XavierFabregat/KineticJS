@@ -1,14 +1,23 @@
 {
   "name": "kineticjs",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
-  },
-  "author": "",
-  "license": "ISC",
   "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build"
+  },
+  "author": "Xavier Fabregat <xavi.fabregat.pous@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XavierFabregat/kineticjs.git"
+  },
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",
     "@types/node": "^22.9.0",
