@@ -6,5 +6,5 @@
     "rootDir": "src",
     "declaration": true
   },
-  "exclude": ["node_modules/", "local/", "dist/"]
+  "exclude": ["node_modules/", "example", "dist/", "example/public"]
 }

@@ -8,6 +8,7 @@ import {
   KineticResponse,
 } from './types';
 import { Router } from './router';
+import { staticFiles } from './staticFiles';
 
 export default class Kinetic {
   private routes: {
@@ -63,6 +64,8 @@ export default class Kinetic {
         (handler) => handler.method === method
       )?.handler;
 
+      const isFileRequest = url?.includes('.') || url === '/';
+
       if (routeHandler) {
         const middlewares = this.middleware;
 
@@ -78,6 +81,21 @@ export default class Kinetic {
         };
 
         next(); // start middleware chain
+      } else if (isFileRequest) {
+        const middlewares = this.middleware;
+
+        let index = -1;
+
+        const next = () => {
+          index++;
+          if (index < middlewares.length) {
+            middlewares[index]!(req, res as KineticResponse, next);
+          } else {
+            staticFiles(req.url!)(req, res as KineticResponse, () => {});
+          }
+        };
+
+        next();
       } else {
         res.writeHead(404, { 'content-type': 'text/plain' });
         res.end('Not found');

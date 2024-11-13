@@ -1,0 +1,109 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KineticJS - A Minimalist Node.js Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">KineticJS</a>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#getting-started">Get Started</a></li>
+          <li><a href="#github">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container">
+        <h1>Welcome to KineticJS</h1>
+        <p>
+          A minimalist and efficient Node.js framework for building web
+          applications.
+        </p>
+        <a href="#getting-started" class="btn">Get Started</a>
+      </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <i class="icon">⚡️</i>
+            <h3>Fast and Lightweight</h3>
+            <p>
+              Minimal overhead ensures high performance and quick response
+              times.
+            </p>
+          </div>
+          <div class="feature-item">
+            <i class="icon">🔧</i>
+            <h3>Easy to Use</h3>
+            <p>
+              Simple APIs make building web applications straightforward and
+              enjoyable.
+            </p>
+          </div>
+          <div class="feature-item">
+            <i class="icon">🔌</i>
+            <h3>Middleware Support</h3>
+            <p>Flexible middleware system allows for powerful extensibility.</p>
+          </div>
+          <div class="feature-item">
+            <i class="icon">🚀</i>
+            <h3>Modern JavaScript</h3>
+            <p>Built with modern JavaScript features using ES6+ syntax.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="getting-started">
+      <div class="container">
+        <h2>Getting Started</h2>
+        <p>Install KineticJS via npm and start building your application:</p>
+        <pre><code class="language-bash">npm install kineticjs --save</code></pre>
+        <p>Create a simple server:</p>
+        <pre><code class="language-javascript">// server.js
+const Kinetic = require('kineticjs');
+
+const app = new Kinetic();
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+</code></pre>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 KineticJS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Link to external JS -->
+    <script src="/js/app.js"></script>
+  </body>
+</html>
